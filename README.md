@@ -1,4 +1,4 @@
-# deploykit
+# Deploykit
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -7,7 +7,10 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-### START HERE
+### Screenshot
+
+![alt text](deploy-kit.png "Logo Title Text 1")
+
 
 Package setup [START HERE FIRST](START.HERE.md)!
 

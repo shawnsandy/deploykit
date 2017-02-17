@@ -13,7 +13,7 @@
                 <div class="col-md-2 ">
                     <i class="fa fa-server"></i> {{ $deploy->connection }}
                 </div>
-                <div class="col-md-8">{{ $deploy->responses }}</div>
+                <div class="col-md-8">{{ str_limit($deploy->responses, 200) }}</div>
                 <div class="col-md-2">
                     <i class="fa fa-clock-o"></i> {{ $deploy->created_at->diffForHumans() }}
                 </div>

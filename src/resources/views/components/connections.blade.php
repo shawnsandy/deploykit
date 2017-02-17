@@ -2,7 +2,7 @@
 
     <div class="div">
         <div class="col-md-4">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-body">
                     <h4 class="text-uppercase"><i class="fa fa-power-off"></i> {{ $key }} Server</h4>
                     <hr>
