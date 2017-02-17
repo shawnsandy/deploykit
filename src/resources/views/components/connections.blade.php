@@ -1,15 +1,11 @@
-<div class="col-md-12">
-    <h2>Servers </h2>
-</div>
 @foreach($servers as $key => $connection)
+
     <div class="div">
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="text-capitalize"><i class="fa fa-cog"></i> {{ $key }}</h3>
-
+                    <h4 class="text-uppercase"><i class="fa fa-power-off"></i> {{ $key }} Server</h4>
                     <hr>
-
                     <p class="text-right">
                         <a href="/deploy/connection/{{ $key }}" class="btn btn-default btn-xs btn-primary">
                             Deploy
