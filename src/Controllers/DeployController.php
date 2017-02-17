@@ -33,8 +33,8 @@
                 $message = 'Error deploying to ' . $connection;
                 return back()->with('error', $message);
             }
-            $message = 'Your ' . $connection . ' server has been updated';
-            return back()->with('success', $message);
+            $message = 'Connection to ' . strtoupper($connection) . ' server was successful';
+            return back()->with('info', $message);
         }
 
     }
