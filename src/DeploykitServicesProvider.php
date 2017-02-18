@@ -3,6 +3,7 @@
 namespace ShawnSandy\DeployKit;
 
 use Illuminate\Support\ServiceProvider;
+use ShawnSandy\Deploykit\Libs\Deploys;
 
 /**
  * Class Provider
@@ -55,7 +56,6 @@ class DeploykitServicesProvider extends ServiceProvider
             include_once __DIR__ . '/Helpers/helper.php';
         endif;
 
-
     }
 
     /**
@@ -69,12 +69,12 @@ class DeploykitServicesProvider extends ServiceProvider
        $this->mergeConfigFrom(
             __DIR__ . '/config/config.php', 'deploykit'
         );
-         /***  remove this line to uncomment and setup ****
+
         $this->app->bind(
-            '__YOUR_FACADE_NAME__', function () {
-                return new YOUR_CLASS_NAME();
+            'Deploys', function () {
+                return new Deploys();
             }
         );
-      *** remove this line to uncomment ***/
+
     }
 }

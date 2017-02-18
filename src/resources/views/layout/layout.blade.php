@@ -15,9 +15,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
-        html , body {
+        html, body {
             -webkit-font-smoothing: antialiased;
         }
+
+        section {
+            margin-bottom: 60px;
+        }
+
         p {
             font-size: 16px;
         }
@@ -44,6 +49,7 @@
         .form-control {
             border-radius: 0;
         }
+
         .hide {
             display: none;
         }
@@ -61,23 +67,25 @@
 </head>
 
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h1>
-                <a href="/deploy">@yield('page_title')</a>
-            </h1>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>
+                    <a href="/deploy">@yield('page_title')</a>
+                </h1>
 
+            </div>
+            <div class="col-md-6 text-right">
+                <p class="h1">
+                    <a href="/" class="btn btn-link btn-lg"><i class="fa fa-home"></i></a>
+                </p>
+            </div>
         </div>
-        <div class="col-md-6 text-right">
-            <p class="h1">
-                <a href="/" class="btn btn-link btn-lg"><i class="fa fa-home"></i></a>
-            </p>
-        </div>
+
     </div>
-
-</div>
-<hr>
+    <hr>
+</section>
 <div class="container">
     <div class="row">
         <div class="col-md-12">

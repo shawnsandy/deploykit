@@ -7,10 +7,10 @@
 @section('content')
 
     <div class="container">
-        <div class="row">
+
             @include('deploys::components.connections')
-           @include("deploys::components.deployment-responses")
-        </div>
+            @include("deploys::components.deployment-responses")
+
     </div>
 
 @endsection

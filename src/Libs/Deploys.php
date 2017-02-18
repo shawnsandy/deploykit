@@ -8,12 +8,10 @@
 
     namespace ShawnSandy\Deploykit\Libs;
 
-    use Carbon\Carbon;
     use Config;
     use Log;
     use Exception;
     use Collective\Remote\RemoteFacade as SSH;
-    use Session;
     use ShawnSandy\Deploykit\ServerDeploys;
 
     class Deploys
@@ -22,7 +20,7 @@
         public $connections;
 
         protected $commands = [
-            "default" => ['cd /var/www',  'git pull'],
+            "default" => ['cd /var/www', 'git pull'],
             "migrate" => ['cd /var/www', 'git pull', 'php artisan migrate'],
             "update" => ['cd /var/www', 'git pull', 'composer update', 'php artisan migrate'],
         ];
@@ -30,24 +28,9 @@
         public function __construct()
         {
 
-        }
+            if (Config::get("deploykit.commands") && is_array(Config::get("deploykit.commands")))
+                $this->commands = config('deploykit.commands');
 
-        public function deploy($connection)
-        {
-            return $this->ssh($connection, [
-                'cd /var/www',
-                'git pull'
-            ]);
-        }
-
-        public function deployWithMigration($connection)
-        {
-
-            return $this->ssh($connection, [
-                'cd /var/www',
-                'git pull',
-                'php artisan migrate'
-            ]);
         }
 
         public function connections()
@@ -56,7 +39,7 @@
         }
 
         /**
-         * @param string $connection connection name
+         * @param string $connection connection name for server
          * @param string $commands commands to run
          * @return bool
          */
@@ -65,12 +48,12 @@
 
             $command = $this->commands[$commands];
             try {
-                SSH::into($connection)->run($command, function($line) use ($connection) {
-                    $message = "$connection server deployed - ".$line ;
+                SSH::into($connection)->run($command, function ($line) use ($connection) {
+                    $message = "$connection server deployed - " . $line;
 
                     ServerDeploys::create([
                         'connection' => $connection,
-                        'responses' => $line.PHP_EOL
+                        'responses' => $line . PHP_EOL
                     ]);
 
                 });
@@ -85,23 +68,9 @@
 
         }
 
-        public function getFile()
+        public function getCommands()
         {
-            try {
-                SSH::into('production')->get('/var/www/.env', public_path('/env/example.env-' .  Carbon::now()), function ($line) {
-                    Log::info($line);
-                    return $line;
-                });
-
-                return "success";
-
-            } catch (Exception $exception) {
-                return $exception->getMessage();
-            }
-        }
-
-        public function getCommands() {
-            return $this->commands ;
+            return $this->commands;
         }
 
     }
