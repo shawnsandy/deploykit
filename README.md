@@ -32,18 +32,18 @@ Add the DeploykitServiceProvider to the `config/app.php`
 ``` php
 
 'providers' => [
-/*
-* Package Service Providers...
-*/
+    /*
+    * Package Service Providers...
+    */
 
-//...
+    //...
 
-ShawnSandy\Deploykit\DeploykitServicesProvider::class,
-Collective\Remote\RemoteServiceProvider::class,
+    ShawnSandy\Deploykit\DeploykitServicesProvider::class,
+    Collective\Remote\RemoteServiceProvider::class,
 
-//...
+    //...
 
-]
+    ]
 
 ```
 

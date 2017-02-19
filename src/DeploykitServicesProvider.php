@@ -55,10 +55,12 @@
                 include_once __DIR__ . '/Helpers/helper.php';
             endif;
 
-            $this->loadMigrationsFrom(__DIR__.'/migrations/2017_02_15_141807_create_server_deploys_table.php');
+
+
+            $this->loadMigrationsFrom(__DIR__.'/migrations');
 
             $this->publishes([
-                __DIR__.'/migrations/2017_02_15_141807_create_server_deploys_table.php' => database_path('migrations')
+                __DIR__.'/migrations/' => database_path('migrations/')
             ], 'deploykit-migrations');
 
 
