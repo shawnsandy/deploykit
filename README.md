@@ -5,7 +5,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 
 
-Use Laravel [Collective's Remote (SSH)](https://laravelcollective.com/docs/5.3/ssh) package to depoly your websites with the click of a button.
+Use Laravel [Collective's Remote (SSH)](https://laravelcollective.com/docs/5.3/ssh) package to depoly your websites with the click of a button. Works on PC/MAC/Linux.
 
 ### Screenshot
 
@@ -32,18 +32,18 @@ Add the DeploykitServiceProvider to the `config/app.php`
 ``` php
 
 'providers' => [
-/*
-* Package Service Providers...
-*/
+    /*
+    * Package Service Providers...
+    */
 
-//...
+    //...
 
-ShawnSandy\Deploykit\DeploykitServicesProvider::class,
-Collective\Remote\RemoteServiceProvider::class,
+    ShawnSandy\Deploykit\DeploykitServicesProvider::class,
+    Collective\Remote\RemoteServiceProvider::class,
 
-//...
+    //...
 
-]
+    ]
 
 ```
 
@@ -88,6 +88,15 @@ php artisan vendor:publish --tag=deploykit-config
 
 ```
 
+__Migrations__
+
+``` bash 
+
+php artisan vendor:publish --tag=deploykit-migrations
+
+
+```
+
 __Provider__ 
 
 Publishes all vendor files
@@ -97,6 +106,8 @@ Publishes all vendor files
 php artisan vendor:publish --provider="ShawnSandy\Deploykit\DeploykitServicesProvider"
 
 ```
+
+
 
 __Add the dollowing lines to your `routes\web.php`__
 
@@ -136,7 +147,7 @@ return [
 
 ```
 
-__Setup and configure Remote (SSH)__ [#Basic Usage](https://laravelcollective.com/docs/5.3/ssh#basic-usage)
+__Setup and configure Remote (SSH)__ [#Config](https://laravelcollective.com/docs/5.3/ssh#configuration)
 
 
 ### Advanced Usage 
