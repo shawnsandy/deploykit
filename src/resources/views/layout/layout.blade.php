@@ -89,7 +89,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            @include('deploys::partials.messages')
+            {{--@include('deploys::partials.messages')--}}
         </div>
     </div>
 </div>
