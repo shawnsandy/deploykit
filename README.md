@@ -2,14 +2,15 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
 [![Total Downloads][ico-downloads]][link-downloads]
+
+
+Use Laravel [Collective's Remote (SSH)](https://laravelcollective.com/docs/5.3/ssh) package to depoly your websites with the click of a button.
 
 ### Screenshot
 
 ![alt text](deploy-kit.png "Logo Title Text 1")
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
 ## Install
 
@@ -134,6 +135,8 @@ return [
 ];
 
 ```
+
+__Setup and configure Remote (SSH)__ [#Basic Usage](https://laravelcollective.com/docs/5.3/ssh#basic-usage)
 
 
 ### Advanced Usage 
