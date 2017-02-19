@@ -136,6 +136,8 @@ return [
 
 ```
 
+__Setup and configure Remote (SSH)__ [#Basic Usage](https://laravelcollective.com/docs/5.3/ssh#basic-usage)
+
 
 ### Advanced Usage 
 
