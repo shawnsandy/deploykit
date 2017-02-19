@@ -61,7 +61,7 @@ Next add the Facade to you `config.php`
 __Publish vendor/packages assets__
 
 
-You can publish vendor files individually using tags or all using provider option
+You can publish vendor files individually using `--tag` option or all using `--provider`
 
 __Assets__
 
