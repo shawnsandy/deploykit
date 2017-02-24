@@ -56,11 +56,10 @@
             endif;
 
 
-
-            $this->loadMigrationsFrom(__DIR__.'/migrations');
+            $this->loadMigrationsFrom(__DIR__ . '/migrations');
 
             $this->publishes([
-                __DIR__.'/migrations/' => database_path('migrations/')
+                __DIR__ . '/migrations/' => database_path('migrations/')
             ], 'deploykit-migrations');
 
 
