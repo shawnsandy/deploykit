@@ -14,33 +14,33 @@
     use App\Http\Controllers\Controller;
     use ShawnSandy\Deploykit\Libs\Deploys;
 
-    class DeployController extends Controller
-    {
+class DeployController extends Controller
+{
 
-        /**
+    /**
          * @param $connection
-         * @param Request $request
+         * @param Request    $request
          * @return \Illuminate\Http\RedirectResponse
          */
-        public function __invoke($connection, Request $request, Deploys $deploys)
-        {
-            $deploy = $deploys;
-            $commands = "default";
-            try {
-                if ($request->has('commands')):
-                    $commands = $request->commands;
-                endif;
-                $deploy->ssh($connection, $commands);
+    public function __invoke($connection, Request $request, Deploys $deploys)
+    {
+        $deploy = $deploys;
+        $commands = "default";
+        try {
+            if ($request->has('commands')) :
+                $commands = $request->commands;
+            endif;
+            $deploy->ssh($connection, $commands);
 
-            } catch (Exception $exception) {
+        } catch (Exception $exception) {
 
-                Log::error('Error deploying ' . $exception->getMessage());
-                $message = 'Error deploying to ' . $connection;
-                return back()->with('error', $message);
+            Log::error('Error deploying ' . $exception->getMessage());
+            $message = 'Error deploying to ' . $connection;
+            return back()->with('error', $message);
 
-            }
-            $message = 'Connection to ' . strtoupper($connection) . ' server was successful';
-            return back()->with('info', $message);
         }
-
+        $message = 'Connection to ' . strtoupper($connection) . ' server was successful';
+        return back()->with('info', $message);
     }
+
+}

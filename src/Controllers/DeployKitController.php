@@ -24,7 +24,8 @@ class DeployKitController extends Controller
         $this->deploy = $deploys;
     }
 
-    public function index() {
+    public function index() 
+    {
 
         $servers = $this->deploy->connections();
 
@@ -32,7 +33,7 @@ class DeployKitController extends Controller
             ->take(config('deploykit.limit_responses', 200))
             ->paginate(config('deploykit.responses_per_page', 50));
 
-        return view('deploys::index', compact('servers','deployed'));
+        return view('deploys::index', compact('servers', 'deployed'));
 
     }
 
